@@ -44,7 +44,7 @@ func main() {
 
 ```
 
-### explanation here
+Represents a wiki page with a Title (string) and Body (content as a byte slice), by mplementing a save method to write the page's content to a file with the title as the filename.
 
 ## Introducing the net/http package
 
@@ -67,6 +67,11 @@ func main() {
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
+
+handler Function:
+Handles HTTP requests.
+Extracts the URL path and sends a response back to the client.
+Starts a server on port 8080 using http.ListenAndServe.
 
 ## Editing Pages
 
@@ -216,3 +221,8 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
+Combines everything into a fully functional wiki application.
+Key Features: Supports viewing ```(/view/)```, editing ```(/edit/)```, and saving ```(/save/)``` pages.
+Validates routes with validPath regex.
+Uses templates to render pages dynamically.
+Runs a server on port ```8080```, and providing a simple interface for managing wiki pages.
